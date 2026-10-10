@@ -9,215 +9,215 @@
 <style>
 :root{--gold:#e8b943;--bg:#090909;--card:#191919}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:white;font-family:Arial,sans-serif}
-header{background:#111;padding:17px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:5;border-bottom:1px solid #333}
-.logo{font-size:23px;font-weight:900;color:var(--gold)}
+body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif}
+header{background:#111;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:5;border-bottom:1px solid #333}
+.logo{font-size:22px;font-weight:900;color:var(--gold)}
 .logo span{color:white}
-nav{display:flex;gap:13px;flex-wrap:wrap}
+nav{display:flex;gap:12px;flex-wrap:wrap}
 button{cursor:pointer}
 nav button{background:none;color:white;border:0;font-weight:bold}
-.hero{padding:45px 6%;background:linear-gradient(90deg,#090909,#181818 65%,#30220a);min-height:255px}
-.hero small{color:var(--gold);letter-spacing:2px;font-weight:bold}
-.hero h1{font-size:clamp(34px,7vw,58px);margin:15px 0}
-.hero p{color:#ddd;max-width:550px;line-height:1.6}
-.gold{background:var(--gold);color:#111;border:0;border-radius:6px;padding:12px 15px;font-weight:bold}
-.search{padding:20px 5% 5px}
-input{width:100%;padding:14px;border-radius:8px;background:#1a1a1a;color:white;border:1px solid #444;font-size:16px}
-.filters{display:flex;gap:8px;overflow:auto;padding:15px 5%}
-.filters button{white-space:nowrap;border:1px solid #444;border-radius:22px;padding:9px 14px;background:#1a1a1a;color:white}
-.filters button.active{background:var(--gold);color:#111}
-section{padding:10px 5% 26px}
+.hero{padding:35px 5%;background:linear-gradient(110deg,#090909,#29200d);min-height:200px}
+.hero small{color:var(--gold);letter-spacing:2px}
+.hero h1{font-size:clamp(30px,6vw,48px);margin:14px 0}
+.hero p{color:#ddd;line-height:1.5}
+section{padding:18px 5%}
 h2{font-size:22px}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.card{background:var(--card);border:1px solid #303030;border-radius:10px;overflow:hidden}
-.poster{height:155px;background:linear-gradient(145deg,#282828,#4a3615);display:flex;align-items:center;justify-content:center;font-size:48px}
-.info{padding:12px}
-.info h3{font-size:15px;margin:3px 0 8px}
-.meta{font-size:12px;color:#bbb;margin-bottom:10px}
-.info p{font-size:13px;line-height:1.5;color:#ddd}
-.actions{display:flex;flex-direction:column;gap:7px}
-.actions a,.actions button{display:block;text-align:center;text-decoration:none;padding:10px 5px;border-radius:5px;font-size:12px;font-weight:bold}
-.watch{background:var(--gold);color:#111}
-.favorite{background:#292929;border:1px solid #555;color:white}
-.platforms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.platform{background:#171717;border:1px solid #333;border-radius:9px;padding:16px}
-.platform h3{color:var(--gold)}
-.platform p{font-size:13px;line-height:1.5;color:#ccc}
-.platform a{color:var(--gold);font-weight:bold}
-.empty{color:#aaa;padding:20px 0}
-footer{text-align:center;color:#aaa;border-top:1px solid #333;padding:25px 12px;font-size:13px;line-height:1.7}
-footer strong{color:var(--gold)}
-@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.platforms{grid-template-columns:1fr 1fr}.poster{height:130px}}
-@media(max-width:390px){.platforms{grid-template-columns:1fr}}
+.gold{background:var(--gold);color:#111;border:0;border-radius:6px;padding:12px 15px;font-weight:bold}
+.panel{background:#171717;border:1px solid #333;border-radius:12px;padding:16px;margin-bottom:16px}
+video{width:100%;max-height:65vh;background:#000;border-radius:8px}
+input{width:100%;padding:13px;margin:6px 0 12px;background:#222;color:#fff;border:1px solid #555;border-radius:7px;font-size:16px}
+label{display:block;color:#ddd;font-size:14px}
+.note{font-size:13px;color:#bbb;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.card{background:var(--card);border:1px solid #333;border-radius:9px;padding:13px;min-width:0}
+.poster{height:90px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#292929,#554018);font-size:38px;border-radius:6px}
+.card h3{font-size:15px}
+.card p{font-size:12px;color:#bbb;line-height:1.5}
+.card button{width:100%;margin-top:5px}
+.secondary{background:#292929;color:#fff;border:1px solid #555;border-radius:6px;padding:10px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row button{flex:1}
+a{color:var(--gold)}
+footer{text-align:center;padding:25px 12px;color:#aaa;border-top:1px solid #333;font-size:13px;line-height:1.7}
+@media(max-width:600px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}header{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
-
 <header>
   <div class="logo">🎬 CINE<span>MANIA</span></div>
   <nav>
-    <button onclick="inicio()">Inicio</button>
-    <button onclick="todos()">Películas</button>
-    <button onclick="verFavoritos()">❤️ Favoritos</button>
-    <button onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">Plataformas</button>
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})">Inicio</button>
+    <button onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">Catálogo</button>
+    <button onclick="document.getElementById('agregar').scrollIntoView({behavior:'smooth'})">Agregar video</button>
   </nav>
 </header>
 
-<div class="hero" id="inicio">
+<div class="hero">
   <small>CINEMANIA BY ELOTEMANIA</small>
-  <h1>Tu próxima película te espera.</h1>
-  <p>Explora clásicos, cine mexicano, terror, comedia, romance y películas modernas en servicios de streaming.</p>
-  <button class="gold" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">🍿 Explorar catálogo</button>
+  <h1>Tu cine, tu pantalla.</h1>
+  <p>Descubre videos con licencia abierta y agrega enlaces directos a tus propios videos.</p>
+  <button class="gold" onclick="document.getElementById('reproductor').scrollIntoView({behavior:'smooth'})">▶ Abrir reproductor</button>
 </div>
 
-<div class="search">
-  <input id="busqueda" placeholder="🔎 Busca por título o género..." oninput="render()">
-</div>
-
-<div class="filters" id="filtros">
-  <button class="active" onclick="elegir('Todas',this)">Todas</button>
-  <button onclick="elegir('Clásico',this)">Clásicos</button>
-  <button onclick="elegir('Mexicano',this)">Cine mexicano</button>
-  <button onclick="elegir('Acción',this)">Acción</button>
-  <button onclick="elegir('Comedia',this)">Comedia</button>
-  <button onclick="elegir('Terror',this)">Terror</button>
-  <button onclick="elegir('Drama',this)">Drama</button>
-  <button onclick="elegir('Familiar',this)">Familiar</button>
-</div>
-
-<section id="catalogo">
-  <h2 id="titulo">🍿 Descubre películas</h2>
-  <div class="grid" id="lista"></div>
-  <p class="empty" id="vacio" hidden>No encontramos resultados.</p>
+<section id="reproductor">
+  <h2>▶ Reproductor Cinemania</h2>
+  <div class="panel">
+    <video id="video" controls playsinline preload="metadata">
+      Tu navegador no puede reproducir este formato de video.
+    </video>
+    <h3 id="ahora">Selecciona un video para comenzar</h3>
+    <p id="estado" class="note">El video se reproducirá aquí si el enlace es compatible y permite acceso directo.</p>
+    <div class="row">
+      <button class="secondary" onclick="reiniciar()">↺ Reiniciar</button>
+      <button class="secondary" onclick="pantallaCompleta()">⛶ Pantalla completa</button>
+    </div>
+  </div>
 </section>
 
-<section id="servicios">
-  <h2>📺 Plataformas gratuitas</h2>
-  <p style="color:#bbb;line-height:1.6">Encuentra películas completas en servicios oficiales. El catálogo, idioma y disponibilidad pueden variar por país.</p>
-  <div class="platforms">
-    <div class="platform">
-      <h3>🟣 Pluto TV</h3>
-      <p>Películas en español, canales de cine y títulos bajo demanda sin suscripción.</p>
-      <a href="https://pluto.tv/" target="_blank" rel="noopener">Explorar Pluto TV ↗</a>
-    </div>
-    <div class="platform">
-      <h3>🔴 Tubi</h3>
-      <p>Películas y series gratuitas con anuncios, con disponibilidad según región.</p>
-      <a href="https://tubitv.com/es-mx/welcome" target="_blank" rel="noopener">Explorar Tubi ↗</a>
-    </div>
-    <div class="platform">
-      <h3>🎞️ Internet Archive</h3>
-      <p>Busca cine clásico y obras cuyos derechos permitan su reproducción gratuita.</p>
-      <a href="https://archive.org/details/movies" target="_blank" rel="noopener">Explorar archivo ↗</a>
-    </div>
-    <div class="platform">
-      <h3>📽️ YouTube</h3>
-      <p>Busca películas completas publicadas por canales oficiales o con licencia de difusión.</p>
-      <a href="https://www.youtube.com/" target="_blank" rel="noopener">Explorar YouTube ↗</a>
-    </div>
+<section id="catalogo">
+  <h2>🍿 Videos disponibles</h2>
+  <p class="note">Ejemplo con licencia Creative Commons: Big Buck Bunny, de Blender Foundation. Es un corto animado con licencia CC BY 3.0, no una película de dominio público.</p>
+  <div class="grid" id="lista"></div>
+</section>
+
+<section id="agregar">
+  <h2>➕ Agregar tu propio video</h2>
+  <div class="panel">
+    <label for="titulo">Nombre del video</label>
+    <input id="titulo" placeholder="Ej. Mi película">
+    <label for="url">Enlace directo del archivo de video</label>
+    <input id="url" type="url" placeholder="https://ejemplo.com/video.mp4">
+    <p class="note">Usa un enlace HTTPS directo a un archivo MP4, WebM u Ogg que tengas derecho a reproducir. Los enlaces a páginas de Netflix, YouTube u otras plataformas no son enlaces directos de video.</p>
+    <button class="gold" onclick="agregar()">Guardar video</button>
+    <p id="mensaje" class="note" aria-live="polite"></p>
   </div>
 </section>
 
 <footer>
-  <strong>🎬 Cinemania by Elotemania</strong><br>
-  Un lugar para descubrir grandes historias.<br>
-  No alojamos ni copiamos películas de terceros. Los botones externos llevan a sus respectivos servicios.
+  <strong style="color:#e8b943">Cinemania by Elotemania</strong><br>
+  Reproduce videos propios o autorizados.<br>
+  Big Buck Bunny © Blender Foundation — licencia CC BY 3.0.
+  <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">Consultar licencia</a>
 </footer>
 
 <script>
-const archivoPublico="https://archive.org/details/movies";
-const pluto="https://pluto.tv/";
-const tubi="https://tubitv.com/es-mx/welcome";
+const ejemplo={
+ id:"bbb",
+ titulo:"Big Buck Bunny",
+ tipo:"Corto animado · CC BY 3.0",
+ icono:"🐰",
+ url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_medium.ogv",
+ fijo:true
+};
 
-const peliculas=[
-["Nosferatu","Clásico","🧛","Terror","Cine mudo clásico. Comprueba los derechos de la copia concreta."],
-["El gabinete del doctor Caligari","Clásico","🎭","Terror","Clásico del expresionismo alemán."],
-["Viaje a la Luna","Clásico","🌙","Familiar","Cortometraje pionero de ciencia ficción."],
-["El gran robo del tren","Clásico","🚂","Acción","Pieza histórica del cine."],
-["Sherlock Jr.","Clásico","🕵️","Comedia","Comedia muda de Buster Keaton."],
-["El mundo perdido","Clásico","🦖","Aventura","Aventura clásica de dinosaurios."],
-["La marca del Zorro","Clásico","⚔️","Acción","Aventura clásica de capa y espada."],
-["El fantasma de la ópera","Clásico","🎼","Drama","Busca una versión con derechos verificados."],
-["El Infierno","Mexicano","🎬","Drama","Busca el título en plataformas oficiales."],
-["Como agua para chocolate","Mexicano","🌹","Drama","Comprueba disponibilidad regional."],
-["Frida","Mexicano","🎨","Drama","Consulta el catálogo legal de tu región."],
-["Compadres","Mexicano","😂","Comedia","Busca la ficha en servicios autorizados."],
-["Perfume de violetas","Mexicano","🌸","Drama","Comprueba disponibilidad en servicios oficiales."],
-["Hasta el viento tiene miedo","Mexicano","👻","Terror","Clásico mexicano de terror."],
-["La vida no vale nada","Mexicano","🎞️","Drama","Cine mexicano clásico."],
-["Los hermanos del hierro","Mexicano","🤠","Acción","Película del cine mexicano."],
-["El bruto","Mexicano","🎭","Drama","Clásico del cine mexicano."],
-["Los tres compadres","Mexicano","🤠","Comedia","Consulta los catálogos de cine clásico."],
-["Tad, el explorador perdido","Familiar","🧭","Aventura","Película de animación; comprueba derechos y disponibilidad."],
-["Mini espías 3D","Familiar","🕶️","Acción","Busca una opción oficial de streaming."],
-["El niño con el pijama de rayas","Drama","🎞️","Drama","Consulta disponibilidad en plataformas autorizadas."],
-["Ciudad de Dios","Drama","🌆","Drama","Consulta la plataforma que tenga los derechos."],
-["Apocalypto","Acción","🏹","Acción","Busca una opción autorizada en tu región."],
-["Estación zombi","Acción","🚆","Acción","Comprueba el título y disponibilidad regional."],
-["La última pelea","Acción","🥊","Acción","Explora los catálogos oficiales."],
-["El último exorcismo","Terror","👁️","Terror","Busca la película en servicios autorizados."],
-["Casese quien pueda","Mexicano","💍","Comedia","Consulta el catálogo de películas en español."],
-["Una mujer sin filtro","Mexicano","🎤","Comedia","Busca una opción oficial de streaming."],
-["El crimen del padre Amaro","Mexicano","🎬","Drama","Comprueba disponibilidad legal en México."],
-["Pistoleros famosos","Mexicano","🤠","Acción","Explora opciones de cine mexicano clásico."]
-];
+let videos=[ejemplo];
+try{
+ const guardados=JSON.parse(localStorage.getItem("cinemaniaVideos")||"[]");
+ videos=videos.concat(guardados.filter(v=>v&&v.id&&v.titulo&&v.url));
+}catch(e){}
 
-let genero="Todas", favoritos=[];
-try{favoritos=JSON.parse(localStorage.getItem("cinemaniaFavs")||"[]")}catch(e){}
-
-function elegir(g,b){
- genero=g;
- document.querySelectorAll("#filtros button").forEach(x=>x.classList.remove("active"));
- if(b)b.classList.add("active");
- document.getElementById("titulo").textContent=g==="Todas"?"🍿 Descubre películas":"🎬 "+g;
- render();
+function guardar(){
+ try{
+  localStorage.setItem("cinemaniaVideos",JSON.stringify(videos.filter(v=>!v.fijo)));
+ }catch(e){
+  document.getElementById("mensaje").textContent="No se pudo guardar en este dispositivo.";
+ }
 }
-function destino(p){
- if(p[1]==="Clásico")return archivoPublico;
- if(["Mexicano","Familiar"].includes(p[1]))return pluto;
- return tubi;
+
+function seguro(url){
+ try{
+  const u=new URL(url);
+  return u.protocol==="https:"||u.protocol==="http:";
+ }catch(e){return false;}
 }
+
+function escapar(s){
+ return String(s).replace(/[&<>"']/g,c=>({
+  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ }[c]));
+}
+
 function render(){
- const q=document.getElementById("busqueda").value.toLowerCase().trim();
- const filtradas=peliculas.map((p,i)=>({p,i})).filter(({p,i})=>
- (genero==="Todas"||p[1]===genero||p[3]===genero)&&
- p.join(" ").toLowerCase().includes(q)&&
- (!window.soloFav||favoritos.includes(i))
- );
- document.getElementById("lista").innerHTML=filtradas.map(({p,i})=>`
+ document.getElementById("lista").innerHTML=videos.map(v=>`
  <article class="card">
-  <div class="poster">${p[2]}</div>
-  <div class="info">
-   <h3>${p[0]}</h3>
-   <div class="meta">${p[1]} · ${p[3]}</div>
-   <p>${p[4]}</p>
-   <div class="actions">
-    <a class="watch" href="${destino(p)}" target="_blank" rel="noopener">Buscar dónde verla ↗</a>
-    <button class="favorite" onclick="favorito(${i})">${favoritos.includes(i)?"❤️ Guardada":"♡ Favoritos"}</button>
-   </div>
-  </div>
+  <div class="poster">${v.fijo?"🐰":"🎞️"}</div>
+  <h3>${escapar(v.titulo)}</h3>
+  <p>${escapar(v.tipo||"Video agregado")}</p>
+  <button class="gold" onclick="reproducir('${escapar(v.id)}')">▶ REPRODUCIR</button>
+  ${v.fijo?"":`<button class="secondary" onclick="eliminar('${escapar(v.id)}')">Eliminar</button>`}
  </article>`).join("");
- document.getElementById("vacio").hidden=filtradas.length>0;
 }
-function favorito(i){
- favoritos=favoritos.includes(i)?favoritos.filter(x=>x!==i):[...favoritos,i];
- try{localStorage.setItem("cinemaniaFavs",JSON.stringify(favoritos))}catch(e){}
+
+function reproducir(id){
+ const v=videos.find(x=>x.id===id);
+ if(!v)return;
+ const player=document.getElementById("video");
+ if(!seguro(v.url)){
+  document.getElementById("estado").textContent="El enlace no es válido.";
+  return;
+ }
+ player.pause();
+ player.src=v.url;
+ player.load();
+ document.getElementById("ahora").textContent=v.titulo;
+ document.getElementById("estado").textContent="Preparando video… Si el formato o el servidor no son compatibles, prueba otro enlace directo.";
+ document.getElementById("reproductor").scrollIntoView({behavior:"smooth"});
+ player.play().then(()=>{
+  document.getElementById("estado").textContent="Reproduciendo: "+v.titulo;
+ }).catch(()=>{
+  document.getElementById("estado").textContent="Pulsa ▶ en el reproductor para iniciar. Si no funciona, el servidor podría bloquear la reproducción o el formato no ser compatible.";
+ });
+}
+
+function agregar(){
+ const titulo=document.getElementById("titulo").value.trim();
+ const url=document.getElementById("url").value.trim();
+ const mensaje=document.getElementById("mensaje");
+ if(!titulo||!url){
+  mensaje.textContent="Escribe el nombre y el enlace del video.";
+  return;
+ }
+ if(!seguro(url)){
+  mensaje.textContent="Usa un enlace válido que empiece por https:// o http://";
+  return;
+ }
+ if(!/\.(mp4|webm|ogv|ogg)(\?|#|$)/i.test(new URL(url).pathname)){
+  mensaje.textContent="El enlace no parece terminar en un archivo MP4, WebM u Ogg. Usa un enlace directo de video.";
+  return;
+ }
+ const v={
+  id:"v"+Date.now(),
+  titulo,
+  url,
+  tipo:"Video agregado"
+ };
+ videos.push(v);
+ guardar();
+ render();
+ document.getElementById("titulo").value="";
+ document.getElementById("url").value="";
+ mensaje.textContent="Video agregado al catálogo de este navegador.";
+}
+
+function eliminar(id){
+ videos=videos.filter(v=>v.id!==id);
+ guardar();
  render();
 }
-function verFavoritos(){
- window.soloFav=true;
- document.getElementById("titulo").textContent="❤️ Mis favoritos";
- render();
- document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
+
+function reiniciar(){
+ const p=document.getElementById("video");
+ p.currentTime=0;
 }
-function todos(){
- window.soloFav=false;
- document.getElementById("busqueda").value="";
- elegir("Todas",document.querySelector("#filtros button"));
- document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
+function pantallaCompleta(){
+ const p=document.getElementById("video");
+ if(p.requestFullscreen)p.requestFullscreen();
+ else if(p.webkitEnterFullscreen)p.webkitEnterFullscreen();
 }
-function inicio(){window.scrollTo({top:0,behavior:"smooth"})}
-window.soloFav=false;
+
+document.getElementById("video").addEventListener("error",()=>{
+ document.getElementById("estado").textContent="No se pudo reproducir este enlace. Comprueba que sea directo, que el archivo exista y que el servidor permita reproducirlo desde otra página.";
+});
 render();
 </script>
 </body>
