@@ -3,56 +3,52 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
 <title>Cinemania by Elotemania</title>
 <style>
-:root{--gold:#e8b943;--bg:#080808;--card:#171717;--muted:#aaa}
+:root{--gold:#e8b943;--bg:#090909;--card:#191919}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:white;font-family:Arial,sans-serif}
-header{padding:17px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;background:#101010;border-bottom:1px solid #292929;position:sticky;top:0;z-index:5}
-.logo{font-size:22px;font-weight:900;color:var(--gold)}
+header{background:#111;padding:17px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:5;border-bottom:1px solid #333}
+.logo{font-size:23px;font-weight:900;color:var(--gold)}
 .logo span{color:white}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-nav button{background:none;border:0;color:white;font-weight:bold;cursor:pointer}
+nav{display:flex;gap:13px;flex-wrap:wrap}
 button{cursor:pointer}
-.hero{padding:55px 6%;min-height:300px;background:linear-gradient(90deg,#080808 5%,#080808d9 50%,#08080822),linear-gradient(0deg,#080808,#252525);display:flex;align-items:center}
-.hero-content{max-width:620px}
-.tag{color:var(--gold);font-weight:bold;letter-spacing:2px}
-h1{font-size:clamp(34px,7vw,62px);margin:14px 0}
-.hero p{color:#ddd;line-height:1.6}
-.gold{background:var(--gold);color:#111;border:0;border-radius:6px;padding:12px 18px;font-weight:bold}
-.outline{background:#282828;color:white;border:1px solid #555;border-radius:6px;padding:11px 15px;font-weight:bold}
-.search-area{padding:20px 5% 4px}
-input,select{background:#191919;border:1px solid #444;border-radius:8px;color:white;padding:13px;width:100%;font-size:16px}
-.filters{display:flex;gap:9px;overflow-x:auto;padding:16px 5%}
-.filters button{white-space:nowrap;border:1px solid #444;background:#171717;color:white;border-radius:22px;padding:9px 15px}
-.filters button.active{background:var(--gold);color:#111;border-color:var(--gold)}
-section{padding:12px 5% 25px}
-.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px}
+nav button{background:none;color:white;border:0;font-weight:bold}
+.hero{padding:45px 6%;background:linear-gradient(90deg,#090909,#181818 65%,#30220a);min-height:255px}
+.hero small{color:var(--gold);letter-spacing:2px;font-weight:bold}
+.hero h1{font-size:clamp(34px,7vw,58px);margin:15px 0}
+.hero p{color:#ddd;max-width:550px;line-height:1.6}
+.gold{background:var(--gold);color:#111;border:0;border-radius:6px;padding:12px 15px;font-weight:bold}
+.search{padding:20px 5% 5px}
+input{width:100%;padding:14px;border-radius:8px;background:#1a1a1a;color:white;border:1px solid #444;font-size:16px}
+.filters{display:flex;gap:8px;overflow:auto;padding:15px 5%}
+.filters button{white-space:nowrap;border:1px solid #444;border-radius:22px;padding:9px 14px;background:#1a1a1a;color:white}
+.filters button.active{background:var(--gold);color:#111}
+section{padding:10px 5% 26px}
 h2{font-size:22px}
-.section-title small{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}
-.movie{min-width:0;background:var(--card);border-radius:10px;overflow:hidden;border:1px solid #292929;transition:transform .2s}
-.movie:hover{transform:translateY(-4px)}
-.poster{width:100%;aspect-ratio:2/3;object-fit:cover;display:block;background:#222}
-.movie-info{padding:10px}
-.movie h3{font-size:15px;margin:2px 0 8px}
-.meta{font-size:12px;color:var(--muted);margin-bottom:10px}
-.movie-actions{display:flex;gap:6px}
-.movie-actions button{padding:8px 6px;flex:1;font-size:12px;border-radius:5px}
-.fav{background:#292929;color:white;border:1px solid #444}
-.empty{color:#aaa;padding:25px 0}
-footer{text-align:center;padding:28px 15px;border-top:1px solid #292929;color:#aaa;font-size:13px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.card{background:var(--card);border:1px solid #303030;border-radius:10px;overflow:hidden}
+.poster{height:155px;background:linear-gradient(145deg,#282828,#4a3615);display:flex;align-items:center;justify-content:center;font-size:48px}
+.info{padding:12px}
+.info h3{font-size:15px;margin:3px 0 8px}
+.meta{font-size:12px;color:#bbb;margin-bottom:10px}
+.info p{font-size:13px;line-height:1.5;color:#ddd}
+.actions{display:flex;flex-direction:column;gap:7px}
+.actions a,.actions button{display:block;text-align:center;text-decoration:none;padding:10px 5px;border-radius:5px;font-size:12px;font-weight:bold}
+.watch{background:var(--gold);color:#111}
+.favorite{background:#292929;border:1px solid #555;color:white}
+.platforms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.platform{background:#171717;border:1px solid #333;border-radius:9px;padding:16px}
+.platform h3{color:var(--gold)}
+.platform p{font-size:13px;line-height:1.5;color:#ccc}
+.platform a{color:var(--gold);font-weight:bold}
+.empty{color:#aaa;padding:20px 0}
+footer{text-align:center;color:#aaa;border-top:1px solid #333;padding:25px 12px;font-size:13px;line-height:1.7}
 footer strong{color:var(--gold)}
-.modal{display:none;position:fixed;inset:0;background:#000e;z-index:20;align-items:center;justify-content:center;padding:18px}
-.modal.show{display:flex}
-.modal-box{background:#171717;border:1px solid #444;border-radius:12px;max-width:520px;width:100%;padding:22px;max-height:90vh;overflow:auto}
-.modal-box img{width:120px;max-height:180px;object-fit:cover;float:left;margin:0 16px 10px 0;border-radius:7px}
-.modal-box p{color:#ddd;line-height:1.6}
-.close{float:right;background:#333;color:white;border:0;border-radius:5px;padding:8px 12px}
-@media(max-width:850px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}}
-@media(max-width:520px){header{padding:14px 4%;align-items:flex-start;flex-direction:column}nav{gap:12px}.hero{padding:40px 5%;min-height:280px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.movie-info{padding:8px}.movie h3{font-size:14px}section{padding-left:4%;padding-right:4%}}
+@media(max-width:700px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.platforms{grid-template-columns:1fr 1fr}.poster{height:130px}}
+@media(max-width:390px){.platforms{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -61,163 +57,168 @@ footer strong{color:var(--gold)}
   <div class="logo">🎬 CINE<span>MANIA</span></div>
   <nav>
     <button onclick="inicio()">Inicio</button>
-    <button onclick="mostrarFavoritos()">❤️ Favoritos</button>
-    <button onclick="verCatalogo()">Películas</button>
+    <button onclick="todos()">Películas</button>
+    <button onclick="verFavoritos()">❤️ Favoritos</button>
+    <button onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">Plataformas</button>
   </nav>
 </header>
 
 <div class="hero" id="inicio">
-  <div class="hero-content">
-    <div class="tag">TU CINE, EN UN SOLO LUGAR</div>
-    <h1>Vive cada historia.</h1>
-    <p>Descubre películas, explora géneros y guarda tus favoritas. ¡Tu próxima aventura comienza aquí!</p>
-    <button class="gold" onclick="verCatalogo()">🍿 Explorar películas</button>
-  </div>
+  <small>CINEMANIA BY ELOTEMANIA</small>
+  <h1>Tu próxima película te espera.</h1>
+  <p>Explora clásicos, cine mexicano, terror, comedia, romance y películas modernas en servicios de streaming.</p>
+  <button class="gold" onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">🍿 Explorar catálogo</button>
 </div>
 
-<div class="search-area" id="buscador">
-  <input id="search" type="search" placeholder="🔎 Buscar una película..." oninput="filtrar()">
+<div class="search">
+  <input id="busqueda" placeholder="🔎 Busca por título o género..." oninput="render()">
 </div>
 
-<div class="filters" id="filters">
-  <button class="active" onclick="categoria('Todas',this)">Todas</button>
-  <button onclick="categoria('Acción',this)">Acción</button>
-  <button onclick="categoria('Comedia',this)">Comedia</button>
-  <button onclick="categoria('Terror',this)">Terror</button>
-  <button onclick="categoria('Romance',this)">Romance</button>
-  <button onclick="categoria('Aventura',this)">Aventura</button>
-  <button onclick="categoria('Animación',this)">Animación</button>
+<div class="filters" id="filtros">
+  <button class="active" onclick="elegir('Todas',this)">Todas</button>
+  <button onclick="elegir('Clásico',this)">Clásicos</button>
+  <button onclick="elegir('Mexicano',this)">Cine mexicano</button>
+  <button onclick="elegir('Acción',this)">Acción</button>
+  <button onclick="elegir('Comedia',this)">Comedia</button>
+  <button onclick="elegir('Terror',this)">Terror</button>
+  <button onclick="elegir('Drama',this)">Drama</button>
+  <button onclick="elegir('Familiar',this)">Familiar</button>
 </div>
 
 <section id="catalogo">
-  <div class="section-title">
-    <h2 id="titulo">🍿 Películas destacadas</h2>
-    <small id="contador"></small>
+  <h2 id="titulo">🍿 Descubre películas</h2>
+  <div class="grid" id="lista"></div>
+  <p class="empty" id="vacio" hidden>No encontramos resultados.</p>
+</section>
+
+<section id="servicios">
+  <h2>📺 Plataformas gratuitas</h2>
+  <p style="color:#bbb;line-height:1.6">Encuentra películas completas en servicios oficiales. El catálogo, idioma y disponibilidad pueden variar por país.</p>
+  <div class="platforms">
+    <div class="platform">
+      <h3>🟣 Pluto TV</h3>
+      <p>Películas en español, canales de cine y títulos bajo demanda sin suscripción.</p>
+      <a href="https://pluto.tv/" target="_blank" rel="noopener">Explorar Pluto TV ↗</a>
+    </div>
+    <div class="platform">
+      <h3>🔴 Tubi</h3>
+      <p>Películas y series gratuitas con anuncios, con disponibilidad según región.</p>
+      <a href="https://tubitv.com/es-mx/welcome" target="_blank" rel="noopener">Explorar Tubi ↗</a>
+    </div>
+    <div class="platform">
+      <h3>🎞️ Internet Archive</h3>
+      <p>Busca cine clásico y obras cuyos derechos permitan su reproducción gratuita.</p>
+      <a href="https://archive.org/details/movies" target="_blank" rel="noopener">Explorar archivo ↗</a>
+    </div>
+    <div class="platform">
+      <h3>📽️ YouTube</h3>
+      <p>Busca películas completas publicadas por canales oficiales o con licencia de difusión.</p>
+      <a href="https://www.youtube.com/" target="_blank" rel="noopener">Explorar YouTube ↗</a>
+    </div>
   </div>
-  <div class="grid" id="peliculas"></div>
-  <div class="empty" id="vacio" hidden>No encontramos películas. Prueba otra búsqueda.</div>
 </section>
 
 <footer>
   <strong>🎬 Cinemania by Elotemania</strong><br>
-  Tu espacio para descubrir grandes historias.<br>
-  Catálogo de demostración. Los derechos de las películas pertenecen a sus respectivos titulares.
+  Un lugar para descubrir grandes historias.<br>
+  No alojamos ni copiamos películas de terceros. Los botones externos llevan a sus respectivos servicios.
 </footer>
 
-<div class="modal" id="modal" onclick="cerrarSiFondo(event)">
-  <div class="modal-box">
-    <button class="close" onclick="cerrarModal()">✕ Cerrar</button>
-    <div style="clear:both;height:15px"></div>
-    <div id="detalle"></div>
-  </div>
-</div>
-
 <script>
-const peliculas = [
- {id:1,titulo:"Misión Extrema",genero:"Acción",anio:2025,nota:"8.2",img:"https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=500&q=80",desc:"Una misión inesperada pondrá a prueba el valor y la inteligencia de un equipo que no puede fallar."},
- {id:2,titulo:"Risas sin Control",genero:"Comedia",anio:2024,nota:"7.8",img:"https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80",desc:"Un encuentro inesperado transforma un día común en una cadena de situaciones divertidas."},
- {id:3,titulo:"La Casa Oscura",genero:"Terror",anio:2025,nota:"7.5",img:"https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=500&q=80",desc:"Una familia llega a una casa abandonada y descubre que algunos secretos deberían permanecer ocultos."},
- {id:4,titulo:"Amor de Verano",genero:"Romance",anio:2024,nota:"8.0",img:"https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=500&q=80",desc:"Dos desconocidos se conocen durante unas vacaciones y tendrán que decidir qué significa estar juntos."},
- {id:5,titulo:"El Gran Viaje",genero:"Aventura",anio:2025,nota:"8.4",img:"https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=500&q=80",desc:"Un grupo de exploradores emprende una travesía llena de misterios y paisajes sorprendentes."},
- {id:6,titulo:"Mundo de Fantasía",genero:"Animación",anio:2024,nota:"8.1",img:"https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=500&q=80",desc:"Una aventura familiar sobre la amistad, la imaginación y el poder de creer en uno mismo."},
- {id:7,titulo:"Código Secreto",genero:"Acción",anio:2023,nota:"7.9",img:"https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=500&q=80",desc:"Una especialista en seguridad descubre una conspiración que amenaza a toda la ciudad."},
- {id:8,titulo:"Noche de Risas",genero:"Comedia",anio:2025,nota:"7.6",img:"https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=500&q=80",desc:"Tres amigos organizan el evento del año, pero nada sale según lo planeado."},
- {id:9,titulo:"Ecos del Pasado",genero:"Terror",anio:2023,nota:"7.7",img:"https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=500&q=80",desc:"Extraños sonidos cada noche conducen a una investigación llena de tensión y misterio."},
- {id:10,titulo:"Destino Compartido",genero:"Romance",anio:2025,nota:"8.3",img:"https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=500&q=80",desc:"Dos personas con vidas muy distintas descubren que una pequeña decisión puede cambiarlo todo."}
+const archivoPublico="https://archive.org/details/movies";
+const pluto="https://pluto.tv/";
+const tubi="https://tubitv.com/es-mx/welcome";
+
+const peliculas=[
+["Nosferatu","Clásico","🧛","Terror","Cine mudo clásico. Comprueba los derechos de la copia concreta."],
+["El gabinete del doctor Caligari","Clásico","🎭","Terror","Clásico del expresionismo alemán."],
+["Viaje a la Luna","Clásico","🌙","Familiar","Cortometraje pionero de ciencia ficción."],
+["El gran robo del tren","Clásico","🚂","Acción","Pieza histórica del cine."],
+["Sherlock Jr.","Clásico","🕵️","Comedia","Comedia muda de Buster Keaton."],
+["El mundo perdido","Clásico","🦖","Aventura","Aventura clásica de dinosaurios."],
+["La marca del Zorro","Clásico","⚔️","Acción","Aventura clásica de capa y espada."],
+["El fantasma de la ópera","Clásico","🎼","Drama","Busca una versión con derechos verificados."],
+["El Infierno","Mexicano","🎬","Drama","Busca el título en plataformas oficiales."],
+["Como agua para chocolate","Mexicano","🌹","Drama","Comprueba disponibilidad regional."],
+["Frida","Mexicano","🎨","Drama","Consulta el catálogo legal de tu región."],
+["Compadres","Mexicano","😂","Comedia","Busca la ficha en servicios autorizados."],
+["Perfume de violetas","Mexicano","🌸","Drama","Comprueba disponibilidad en servicios oficiales."],
+["Hasta el viento tiene miedo","Mexicano","👻","Terror","Clásico mexicano de terror."],
+["La vida no vale nada","Mexicano","🎞️","Drama","Cine mexicano clásico."],
+["Los hermanos del hierro","Mexicano","🤠","Acción","Película del cine mexicano."],
+["El bruto","Mexicano","🎭","Drama","Clásico del cine mexicano."],
+["Los tres compadres","Mexicano","🤠","Comedia","Consulta los catálogos de cine clásico."],
+["Tad, el explorador perdido","Familiar","🧭","Aventura","Película de animación; comprueba derechos y disponibilidad."],
+["Mini espías 3D","Familiar","🕶️","Acción","Busca una opción oficial de streaming."],
+["El niño con el pijama de rayas","Drama","🎞️","Drama","Consulta disponibilidad en plataformas autorizadas."],
+["Ciudad de Dios","Drama","🌆","Drama","Consulta la plataforma que tenga los derechos."],
+["Apocalypto","Acción","🏹","Acción","Busca una opción autorizada en tu región."],
+["Estación zombi","Acción","🚆","Acción","Comprueba el título y disponibilidad regional."],
+["La última pelea","Acción","🥊","Acción","Explora los catálogos oficiales."],
+["El último exorcismo","Terror","👁️","Terror","Busca la película en servicios autorizados."],
+["Casese quien pueda","Mexicano","💍","Comedia","Consulta el catálogo de películas en español."],
+["Una mujer sin filtro","Mexicano","🎤","Comedia","Busca una opción oficial de streaming."],
+["El crimen del padre Amaro","Mexicano","🎬","Drama","Comprueba disponibilidad legal en México."],
+["Pistoleros famosos","Mexicano","🤠","Acción","Explora opciones de cine mexicano clásico."]
 ];
 
-let generoActual = "Todas";
-let soloFavoritos = false;
-let favoritos = [];
-try { favoritos = JSON.parse(localStorage.getItem("cinemania-favoritos") || "[]"); } catch(e) {}
+let genero="Todas", favoritos=[];
+try{favoritos=JSON.parse(localStorage.getItem("cinemaniaFavs")||"[]")}catch(e){}
 
-function guardarFavoritos(){
-  try { localStorage.setItem("cinemania-favoritos",JSON.stringify(favoritos)); } catch(e) {}
+function elegir(g,b){
+ genero=g;
+ document.querySelectorAll("#filtros button").forEach(x=>x.classList.remove("active"));
+ if(b)b.classList.add("active");
+ document.getElementById("titulo").textContent=g==="Todas"?"🍿 Descubre películas":"🎬 "+g;
+ render();
 }
-
-function escapar(texto){
-  return String(texto).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function destino(p){
+ if(p[1]==="Clásico")return archivoPublico;
+ if(["Mexicano","Familiar"].includes(p[1]))return pluto;
+ return tubi;
 }
-
-function filtrar(){
-  const q = document.getElementById("search").value.trim().toLowerCase();
-  const lista = peliculas.filter(p=>{
-    const coincide = (p.titulo+" "+p.genero+" "+p.anio).toLowerCase().includes(q);
-    const coincideGenero = generoActual==="Todas" || p.genero===generoActual;
-    const coincideFav = !soloFavoritos || favoritos.includes(p.id);
-    return coincide && coincideGenero && coincideFav;
-  });
-  document.getElementById("peliculas").innerHTML = lista.map(p=>`
-    <article class="movie">
-      <img class="poster" src="${p.img}" alt="${escapar(p.titulo)}" loading="lazy"
-        onerror="this.style.display='none'">
-      <div class="movie-info">
-        <h3>${escapar(p.titulo)}</h3>
-        <div class="meta">${p.anio} · ${escapar(p.genero)} · ⭐ ${p.nota}</div>
-        <div class="movie-actions">
-          <button class="gold" onclick="verDetalle(${p.id})">Detalles</button>
-          <button class="fav" aria-label="Favorito" onclick="cambiarFavorito(${p.id})">${favoritos.includes(p.id)?"❤️":"♡"}</button>
-        </div>
-      </div>
-    </article>`).join("");
-  document.getElementById("contador").textContent=lista.length+" títulos";
-  document.getElementById("vacio").hidden=lista.length!==0;
+function render(){
+ const q=document.getElementById("busqueda").value.toLowerCase().trim();
+ const filtradas=peliculas.map((p,i)=>({p,i})).filter(({p,i})=>
+ (genero==="Todas"||p[1]===genero||p[3]===genero)&&
+ p.join(" ").toLowerCase().includes(q)&&
+ (!window.soloFav||favoritos.includes(i))
+ );
+ document.getElementById("lista").innerHTML=filtradas.map(({p,i})=>`
+ <article class="card">
+  <div class="poster">${p[2]}</div>
+  <div class="info">
+   <h3>${p[0]}</h3>
+   <div class="meta">${p[1]} · ${p[3]}</div>
+   <p>${p[4]}</p>
+   <div class="actions">
+    <a class="watch" href="${destino(p)}" target="_blank" rel="noopener">Buscar dónde verla ↗</a>
+    <button class="favorite" onclick="favorito(${i})">${favoritos.includes(i)?"❤️ Guardada":"♡ Favoritos"}</button>
+   </div>
+  </div>
+ </article>`).join("");
+ document.getElementById("vacio").hidden=filtradas.length>0;
 }
-
-function categoria(g,boton){
-  generoActual=g;
-  soloFavoritos=false;
-  document.querySelectorAll("#filters button").forEach(b=>b.classList.remove("active"));
-  if(boton) boton.classList.add("active");
-  document.getElementById("titulo").textContent="🍿 "+(g==="Todas"?"Películas destacadas":g);
-  filtrar();
+function favorito(i){
+ favoritos=favoritos.includes(i)?favoritos.filter(x=>x!==i):[...favoritos,i];
+ try{localStorage.setItem("cinemaniaFavs",JSON.stringify(favoritos))}catch(e){}
+ render();
 }
-
-function cambiarFavorito(id){
-  favoritos=favoritos.includes(id)?favoritos.filter(x=>x!==id):[...favoritos,id];
-  guardarFavoritos();
-  filtrar();
+function verFavoritos(){
+ window.soloFav=true;
+ document.getElementById("titulo").textContent="❤️ Mis favoritos";
+ render();
+ document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
 }
-
-function mostrarFavoritos(){
-  soloFavoritos=true;
-  generoActual="Todas";
-  document.querySelectorAll("#filters button").forEach(b=>b.classList.remove("active"));
-  document.getElementById("titulo").textContent="❤️ Mis favoritos";
-  filtrar();
-  document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
+function todos(){
+ window.soloFav=false;
+ document.getElementById("busqueda").value="";
+ elegir("Todas",document.querySelector("#filtros button"));
+ document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
 }
-
-function verCatalogo(){
-  document.getElementById("search").value="";
-  soloFavoritos=false;
-  categoria("Todas",document.querySelector("#filters button"));
-  document.getElementById("catalogo").scrollIntoView({behavior:"smooth"});
-}
-
-function inicio(){
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-
-function verDetalle(id){
-  const p=peliculas.find(x=>x.id===id);
-  if(!p)return;
-  document.getElementById("detalle").innerHTML=`
-    <img src="${p.img}" alt="${escapar(p.titulo)}">
-    <h2>${escapar(p.titulo)}</h2>
-    <p>${p.anio} · ${escapar(p.genero)} · ⭐ ${p.nota}</p>
-    <p>${escapar(p.desc)}</p>
-    <p style="clear:both;color:#aaa;font-size:13px">Ficha de demostración. La reproducción se añadirá con fuentes autorizadas.</p>
-    <button class="gold" onclick="cambiarFavorito(${p.id});verDetalle(${p.id})">
-      ${favoritos.includes(p.id)?"❤️ Quitar de favoritos":"♡ Añadir a favoritos"}
-    </button>`;
-  document.getElementById("modal").classList.add("show");
-}
-
-function cerrarModal(){document.getElementById("modal").classList.remove("show")}
-function cerrarSiFondo(e){if(e.target.id==="modal")cerrarModal()}
-
-filtrar();
+function inicio(){window.scrollTo({top:0,behavior:"smooth"})}
+window.soloFav=false;
+render();
 </script>
 </body>
 </html>
