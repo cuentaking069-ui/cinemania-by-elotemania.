@@ -3,222 +3,448 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#090909">
-<title>Cinemania by Elotemania</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>Cinemania | Hecho por Elotemania</title>
+
 <style>
-:root{--gold:#e8b943;--bg:#090909;--card:#191919}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:#fff;font-family:Arial,sans-serif}
-header{background:#111;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:5;border-bottom:1px solid #333}
-.logo{font-size:22px;font-weight:900;color:var(--gold)}
-.logo span{color:white}
-nav{display:flex;gap:12px;flex-wrap:wrap}
-button{cursor:pointer}
-nav button{background:none;color:white;border:0;font-weight:bold}
-.hero{padding:35px 5%;background:linear-gradient(110deg,#090909,#29200d);min-height:200px}
-.hero small{color:var(--gold);letter-spacing:2px}
-.hero h1{font-size:clamp(30px,6vw,48px);margin:14px 0}
-.hero p{color:#ddd;line-height:1.5}
-section{padding:18px 5%}
-h2{font-size:22px}
-.gold{background:var(--gold);color:#111;border:0;border-radius:6px;padding:12px 15px;font-weight:bold}
-.panel{background:#171717;border:1px solid #333;border-radius:12px;padding:16px;margin-bottom:16px}
-video{width:100%;max-height:65vh;background:#000;border-radius:8px}
-input{width:100%;padding:13px;margin:6px 0 12px;background:#222;color:#fff;border:1px solid #555;border-radius:7px;font-size:16px}
-label{display:block;color:#ddd;font-size:14px}
-.note{font-size:13px;color:#bbb;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
-.card{background:var(--card);border:1px solid #333;border-radius:9px;padding:13px;min-width:0}
-.poster{height:90px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#292929,#554018);font-size:38px;border-radius:6px}
-.card h3{font-size:15px}
-.card p{font-size:12px;color:#bbb;line-height:1.5}
-.card button{width:100%;margin-top:5px}
-.secondary{background:#292929;color:#fff;border:1px solid #555;border-radius:6px;padding:10px}
-.row{display:flex;gap:8px;flex-wrap:wrap}
-.row button{flex:1}
-a{color:var(--gold)}
-footer{text-align:center;padding:25px 12px;color:#aaa;border-top:1px solid #333;font-size:13px;line-height:1.7}
-@media(max-width:600px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}header{align-items:flex-start;flex-direction:column}}
+:root {
+  --fondo: #080808;
+  --panel: #171717;
+  --dorado: #e8bd48;
+  --texto: #ffffff;
+  --gris: #bdbdbd;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: Arial, sans-serif;
+}
+header {
+  text-align: center;
+  padding: 26px 12px 20px;
+  background: linear-gradient(180deg,#242014,#080808);
+  border-bottom: 2px solid var(--dorado);
+}
+header h1 {
+  margin: 0;
+  color: var(--dorado);
+  font-size: clamp(32px, 8vw, 48px);
+  letter-spacing: 3px;
+}
+header p {
+  margin: 7px 0 0;
+  color: #eee;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 16px;
+}
+h2 { color: var(--dorado); }
+input, select {
+  width: 100%;
+  padding: 13px;
+  margin: 6px 0;
+  border-radius: 9px;
+  border: 1px solid #555;
+  background: #1c1c1c;
+  color: white;
+  font-size: 15px;
+}
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.dorado {
+  background: var(--dorado);
+  color: #111;
+}
+.secundario {
+  background: #303030;
+  color: white;
+  border: 1px solid #555;
+}
+#reproductor {
+  background: #151515;
+  padding: 13px;
+  border: 1px solid #55451e;
+  border-radius: 12px;
+  margin: 20px 0;
+  scroll-margin-top: 12px;
+}
+#video {
+  width: 100%;
+  display: block;
+  background: #000;
+  border-radius: 8px;
+  max-height: 65vh;
+}
+#estado {
+  color: var(--gris);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(145px,1fr));
+  gap: 13px;
+}
+.pelicula {
+  background: var(--panel);
+  border: 1px solid #303030;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.poster {
+  height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(140deg,#302718,#101010);
+  font-size: 55px;
+}
+.info { padding: 11px; }
+.info h3 {
+  font-size: 15px;
+  margin: 0 0 7px;
+}
+.info p {
+  color: var(--gris);
+  font-size: 12px;
+  min-height: 28px;
+}
+.info button { width: 100%; }
+.nota {
+  background: #181818;
+  padding: 12px;
+  border-left: 3px solid var(--dorado);
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #ddd;
+}
+footer {
+  text-align: center;
+  color: #999;
+  padding: 25px 10px;
+  border-top: 1px solid #333;
+  font-size: 12px;
+}
+.oculto { display: none; }
 </style>
 </head>
+
 <body>
+
 <header>
-  <div class="logo">🎬 CINE<span>MANIA</span></div>
-  <nav>
-    <button onclick="window.scrollTo({top:0,behavior:'smooth'})">Inicio</button>
-    <button onclick="document.getElementById('catalogo').scrollIntoView({behavior:'smooth'})">Catálogo</button>
-    <button onclick="document.getElementById('agregar').scrollIntoView({behavior:'smooth'})">Agregar video</button>
-  </nav>
+  <h1>CINEMANIA</h1>
+  <p>Hecho por Elotemania</p>
 </header>
 
-<div class="hero">
-  <small>CINEMANIA BY ELOTEMANIA</small>
-  <h1>Tu cine, tu pantalla.</h1>
-  <p>Descubre videos con licencia abierta y agrega enlaces directos a tus propios videos.</p>
-  <button class="gold" onclick="document.getElementById('reproductor').scrollIntoView({behavior:'smooth'})">▶ Abrir reproductor</button>
-</div>
+<main>
+  <h2>🎬 Tu cine</h2>
+  <p style="color:#bbb">
+    Busca un título o selecciona una película para reproducirla aquí.
+  </p>
 
-<section id="reproductor">
-  <h2>▶ Reproductor Cinemania</h2>
-  <div class="panel">
-    <video id="video" controls playsinline preload="metadata">
-      Tu navegador no puede reproducir este formato de video.
+  <input
+    id="busqueda"
+    type="search"
+    placeholder="🔎 Buscar película..."
+    aria-label="Buscar película"
+  >
+
+  <select id="categoria" aria-label="Filtrar películas">
+    <option value="todas">Todas las categorías</option>
+    <option value="animacion">Animación</option>
+    <option value="prueba">Videos de prueba</option>
+    <option value="propias">Mis videos</option>
+  </select>
+
+  <section id="reproductor">
+    <h2 id="tituloVideo">▶ Reproductor Cinemania</h2>
+
+    <video
+      id="video"
+      controls
+      playsinline
+      preload="metadata"
+    >
+      Tu navegador no puede reproducir este video.
     </video>
-    <h3 id="ahora">Selecciona un video para comenzar</h3>
-    <p id="estado" class="note">El video se reproducirá aquí si el enlace es compatible y permite acceso directo.</p>
-    <div class="row">
-      <button class="secondary" onclick="reiniciar()">↺ Reiniciar</button>
-      <button class="secondary" onclick="pantallaCompleta()">⛶ Pantalla completa</button>
-    </div>
-  </div>
-</section>
 
-<section id="catalogo">
-  <h2>🍿 Videos disponibles</h2>
-  <p class="note">Ejemplo con licencia Creative Commons: Big Buck Bunny, de Blender Foundation. Es un corto animado con licencia CC BY 3.0, no una película de dominio público.</p>
-  <div class="grid" id="lista"></div>
-</section>
+    <p id="estado" aria-live="polite">
+      Selecciona una película y se reproducirá en este reproductor.
+    </p>
 
-<section id="agregar">
-  <h2>➕ Agregar tu propio video</h2>
-  <div class="panel">
-    <label for="titulo">Nombre del video</label>
-    <input id="titulo" placeholder="Ej. Mi película">
-    <label for="url">Enlace directo del archivo de video</label>
-    <input id="url" type="url" placeholder="https://ejemplo.com/video.mp4">
-    <p class="note">Usa un enlace HTTPS directo a un archivo MP4, WebM u Ogg que tengas derecho a reproducir. Los enlaces a páginas de Netflix, YouTube u otras plataformas no son enlaces directos de video.</p>
-    <button class="gold" onclick="agregar()">Guardar video</button>
-    <p id="mensaje" class="note" aria-live="polite"></p>
+    <button class="secundario" id="cerrarVideo" type="button">
+      ■ Detener video
+    </button>
+  </section>
+
+  <h2>🍿 Catálogo</h2>
+  <div id="catalogo" class="catalogo"></div>
+
+  <h2>➕ Agregar un video</h2>
+  <p style="color:#bbb;font-size:14px">
+    Agrega un enlace directo a un archivo MP4, WebM u Ogg que tengas
+    autorización para utilizar. El video aparecerá en tu catálogo.
+  </p>
+
+  <input id="nuevoTitulo" type="text" placeholder="Nombre del video">
+
+  <input
+    id="nuevaUrl"
+    type="url"
+    placeholder="https://ejemplo.com/video.mp4"
+  >
+
+  <button class="dorado" id="agregarVideo" type="button">
+    Agregar al catálogo
+  </button>
+
+  <p id="mensajeAgregar" class="nota">
+    Los videos que agregues desde este formulario se guardan en este
+    navegador. No aparecerán automáticamente en los dispositivos de
+    otras personas.
+  </p>
+
+  <h2>ℹ️ Información</h2>
+  <div class="nota">
+    Cinemania es un catálogo con reproductor integrado. Para reproducir
+    un video se necesita un archivo compatible y una fuente que permita
+    acceder al contenido. Este ejemplo incluye un clip de prueba de
+    Big Buck Bunny, publicado bajo licencia Creative Commons Atribución
+    3.0. No contiene películas comerciales completas.
   </div>
-</section>
+</main>
 
 <footer>
-  <strong style="color:#e8b943">Cinemania by Elotemania</strong><br>
-  Reproduce videos propios o autorizados.<br>
-  Big Buck Bunny © Blender Foundation — licencia CC BY 3.0.
-  <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">Consultar licencia</a>
+  CINEMANIA<br>
+  Hecho por Elotemania
 </footer>
 
 <script>
-const ejemplo={
- id:"bbb",
- titulo:"Big Buck Bunny",
- tipo:"Corto animado · CC BY 3.0",
- icono:"🐰",
- url:"https://commons.wikimedia.org/wiki/Special:Redirect/file/Big_Buck_Bunny_medium.ogv",
- fijo:true
-};
+const VIDEO_PRUEBA =
+  "https://raw.githubusercontent.com/bower-media-samples/big-buck-bunny-480p-30s/master/video.mp4";
 
-let videos=[ejemplo];
-try{
- const guardados=JSON.parse(localStorage.getItem("cinemaniaVideos")||"[]");
- videos=videos.concat(guardados.filter(v=>v&&v.id&&v.titulo&&v.url));
-}catch(e){}
+const peliculas = [
+  {
+    id: "bbb",
+    titulo: "Big Buck Bunny",
+    categoria: "animacion",
+    descripcion: "Animación · Clip de prueba",
+    icono: "🐰",
+    url: VIDEO_PRUEBA,
+    fijo: true
+  }
+];
 
-function guardar(){
- try{
-  localStorage.setItem("cinemaniaVideos",JSON.stringify(videos.filter(v=>!v.fijo)));
- }catch(e){
-  document.getElementById("mensaje").textContent="No se pudo guardar en este dispositivo.";
- }
+const video = document.getElementById("video");
+const tituloVideo = document.getElementById("tituloVideo");
+const estado = document.getElementById("estado");
+const catalogo = document.getElementById("catalogo");
+const busqueda = document.getElementById("busqueda");
+const categoria = document.getElementById("categoria");
+
+function leerVideosGuardados() {
+  try {
+    return JSON.parse(localStorage.getItem("cinemaniaVideos") || "[]");
+  } catch (e) {
+    return [];
+  }
 }
 
-function seguro(url){
- try{
-  const u=new URL(url);
-  return u.protocol==="https:"||u.protocol==="http:";
- }catch(e){return false;}
+function obtenerPeliculas() {
+  return [...peliculas, ...leerVideosGuardados()];
 }
 
-function escapar(s){
- return String(s).replace(/[&<>"']/g,c=>({
-  "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
- }[c]));
+function escapar(texto) {
+  return String(texto).replace(/[&<>"']/g, function (c) {
+    return {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[c];
+  });
 }
 
-function render(){
- document.getElementById("lista").innerHTML=videos.map(v=>`
- <article class="card">
-  <div class="poster">${v.fijo?"🐰":"🎞️"}</div>
-  <h3>${escapar(v.titulo)}</h3>
-  <p>${escapar(v.tipo||"Video agregado")}</p>
-  <button class="gold" onclick="reproducir('${escapar(v.id)}')">▶ REPRODUCIR</button>
-  ${v.fijo?"":`<button class="secondary" onclick="eliminar('${escapar(v.id)}')">Eliminar</button>`}
- </article>`).join("");
+function renderizarCatalogo() {
+  const texto = busqueda.value.trim().toLowerCase();
+  const filtro = categoria.value;
+
+  const lista = obtenerPeliculas().filter(function (p) {
+    const coincideTexto =
+      p.titulo.toLowerCase().includes(texto) ||
+      p.descripcion.toLowerCase().includes(texto);
+
+    let coincideCategoria = filtro === "todas";
+
+    if (filtro === "animacion") {
+      coincideCategoria = p.categoria === "animacion";
+    } else if (filtro === "prueba") {
+      coincideCategoria = p.id === "bbb";
+    } else if (filtro === "propias") {
+      coincideCategoria = !p.fijo;
+    }
+
+    return coincideTexto && coincideCategoria;
+  });
+
+  if (lista.length === 0) {
+    catalogo.innerHTML =
+      '<p style="color:#bbb">No se encontraron videos.</p>';
+    return;
+  }
+
+  catalogo.innerHTML = lista.map(function (p) {
+    return `
+      <article class="pelicula">
+        <div class="poster">${escapar(p.icono || "🎬")}</div>
+        <div class="info">
+          <h3>${escapar(p.titulo)}</h3>
+          <p>${escapar(p.descripcion)}</p>
+          <button
+            class="dorado"
+            type="button"
+            data-reproducir="${escapar(p.id)}"
+          >▶ REPRODUCIR</button>
+        </div>
+      </article>
+    `;
+  }).join("");
 }
 
-function reproducir(id){
- const v=videos.find(x=>x.id===id);
- if(!v)return;
- const player=document.getElementById("video");
- if(!seguro(v.url)){
-  document.getElementById("estado").textContent="El enlace no es válido.";
-  return;
- }
- player.pause();
- player.src=v.url;
- player.load();
- document.getElementById("ahora").textContent=v.titulo;
- document.getElementById("estado").textContent="Preparando video… Si el formato o el servidor no son compatibles, prueba otro enlace directo.";
- document.getElementById("reproductor").scrollIntoView({behavior:"smooth"});
- player.play().then(()=>{
-  document.getElementById("estado").textContent="Reproduciendo: "+v.titulo;
- }).catch(()=>{
-  document.getElementById("estado").textContent="Pulsa ▶ en el reproductor para iniciar. Si no funciona, el servidor podría bloquear la reproducción o el formato no ser compatible.";
- });
+function reproducir(id) {
+  const p = obtenerPeliculas().find(function (item) {
+    return item.id === id;
+  });
+
+  if (!p) {
+    estado.textContent = "No se encontró este video.";
+    return;
+  }
+
+  tituloVideo.textContent = "▶ " + p.titulo;
+  estado.textContent = "Cargando video...";
+
+  video.pause();
+  video.src = p.url;
+  video.load();
+
+  document.getElementById("reproductor").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
+
+  const promesa = video.play();
+
+  if (promesa && typeof promesa.catch === "function") {
+    promesa.catch(function () {
+      estado.textContent =
+        "Pulsa el botón ▶ del reproductor para iniciar. " +
+        "Si aparece un error, el enlace puede no permitir reproducción directa.";
+    });
+  }
 }
 
-function agregar(){
- const titulo=document.getElementById("titulo").value.trim();
- const url=document.getElementById("url").value.trim();
- const mensaje=document.getElementById("mensaje");
- if(!titulo||!url){
-  mensaje.textContent="Escribe el nombre y el enlace del video.";
-  return;
- }
- if(!seguro(url)){
-  mensaje.textContent="Usa un enlace válido que empiece por https:// o http://";
-  return;
- }
- if(!/\.(mp4|webm|ogv|ogg)(\?|#|$)/i.test(new URL(url).pathname)){
-  mensaje.textContent="El enlace no parece terminar en un archivo MP4, WebM u Ogg. Usa un enlace directo de video.";
-  return;
- }
- const v={
-  id:"v"+Date.now(),
-  titulo,
-  url,
-  tipo:"Video agregado"
- };
- videos.push(v);
- guardar();
- render();
- document.getElementById("titulo").value="";
- document.getElementById("url").value="";
- mensaje.textContent="Video agregado al catálogo de este navegador.";
-}
-
-function eliminar(id){
- videos=videos.filter(v=>v.id!==id);
- guardar();
- render();
-}
-
-function reiniciar(){
- const p=document.getElementById("video");
- p.currentTime=0;
-}
-function pantallaCompleta(){
- const p=document.getElementById("video");
- if(p.requestFullscreen)p.requestFullscreen();
- else if(p.webkitEnterFullscreen)p.webkitEnterFullscreen();
-}
-
-document.getElementById("video").addEventListener("error",()=>{
- document.getElementById("estado").textContent="No se pudo reproducir este enlace. Comprueba que sea directo, que el archivo exista y que el servidor permita reproducirlo desde otra página.";
+catalogo.addEventListener("click", function (evento) {
+  const boton = evento.target.closest("[data-reproducir]");
+  if (boton) {
+    reproducir(boton.dataset.reproducir);
+  }
 });
-render();
+
+busqueda.addEventListener("input", renderizarCatalogo);
+categoria.addEventListener("change", renderizarCatalogo);
+
+video.addEventListener("playing", function () {
+  estado.textContent = "Reproduciendo dentro de Cinemania.";
+});
+
+video.addEventListener("error", function () {
+  estado.textContent =
+    "No se pudo reproducir este video. El enlace puede estar caído, " +
+    "bloqueado o no ser compatible. Prueba con otro archivo MP4 directo.";
+});
+
+document.getElementById("cerrarVideo").addEventListener("click", function () {
+  video.pause();
+  video.removeAttribute("src");
+  video.load();
+  tituloVideo.textContent = "▶ Reproductor Cinemania";
+  estado.textContent = "Video detenido. Selecciona otro título.";
+});
+
+document.getElementById("agregarVideo").addEventListener("click", function () {
+  const titulo = document.getElementById("nuevoTitulo").value.trim();
+  const urlTexto = document.getElementById("nuevaUrl").value.trim();
+  const mensaje = document.getElementById("mensajeAgregar");
+
+  if (!titulo || !urlTexto) {
+    mensaje.textContent = "Escribe el nombre y el enlace del video.";
+    return;
+  }
+
+  let url;
+
+  try {
+    url = new URL(urlTexto);
+  } catch (e) {
+    mensaje.textContent = "El enlace no es válido.";
+    return;
+  }
+
+  if (url.protocol !== "https:" && url.protocol !== "http:") {
+    mensaje.textContent = "El enlace debe comenzar con https:// o http://.";
+    return;
+  }
+
+  if (!/\.(mp4|webm|ogv|ogg)(?:$|[?#])/i.test(url.href)) {
+    mensaje.textContent =
+      "Usa un enlace directo terminado en .mp4, .webm, .ogv u .ogg.";
+    return;
+  }
+
+  const guardados = leerVideosGuardados();
+
+  guardados.push({
+    id: "propio-" + Date.now(),
+    titulo: titulo,
+    categoria: "propias",
+    descripcion: "Video agregado por ti",
+    icono: "🎞️",
+    url: url.href,
+    fijo: false
+  });
+
+  try {
+    localStorage.setItem("cinemaniaVideos", JSON.stringify(guardados));
+  } catch (e) {
+    mensaje.textContent = "No se pudo guardar en este navegador.";
+    return;
+  }
+
+  document.getElementById("nuevoTitulo").value = "";
+  document.getElementById("nuevaUrl").value = "";
+  mensaje.textContent =
+    "Video agregado. Está guardado en este navegador solamente.";
+  categoria.value = "todas";
+  renderizarCatalogo();
+});
+
+renderizarCatalogo();
 </script>
+
 </body>
 </html>
